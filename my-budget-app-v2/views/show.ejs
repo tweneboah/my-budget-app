@@ -17,8 +17,13 @@
                      <h4 class="pull-right"> Expenses: <%=budget.expenses%> </h4>
                    
                     <p><%= budget.description %></p>
-                   
-<a href="/budget/<%=budget._id%>/comment/new" class="btn btn-primary">More Info</a>
+                    <div>
+                         <%budget.comments.forEach((comment) => {%>
+                             <p><%=comment.text%></p>
+                              <p><%=comment.author%></p>
+                        <% })%>
+                    </div>
+<a href="/budget/<%=budget._id%>/comment/new" class="btn btn-primary">Add Comment</a>
                 </div>
             </div>
 
